@@ -1,0 +1,2 @@
+SwingApplet
+chartPanel
