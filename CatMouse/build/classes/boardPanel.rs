@@ -1,2 +1,0 @@
-boardPanel
-boardContainer
