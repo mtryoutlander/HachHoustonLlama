@@ -5,6 +5,8 @@
  */
 package hackhouston;
 
+import java.util.Random;
+
 /**
  *
  * @author Markus
@@ -16,6 +18,17 @@ public class HackHouston {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int [] array= new int[3];
+        Random ran = new Random();
+       
+        
+        for(int i=0 ;i<array.length;i++){
+            array[i] = ran.nextInt();
+        }
+        for(int i=0 ;i<array.length;i++){
+            System.out.print(array[i]+" ");
+        }
+        
     }
     
 }
