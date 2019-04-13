@@ -29,6 +29,10 @@ public class HackHouston {
             System.out.print(array[i]+" ");
         }
         
+        
+        
+        System.out.println("here a test if i can commit all this");
+        
     }
     
 }
