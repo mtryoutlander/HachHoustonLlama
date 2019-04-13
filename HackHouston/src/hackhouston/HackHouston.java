@@ -18,7 +18,7 @@ public class HackHouston {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int [] array= new int[3];
+        int [] array= new int[20];
         Random ran = new Random();
        
         
