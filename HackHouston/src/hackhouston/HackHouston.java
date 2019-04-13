@@ -26,7 +26,7 @@ public class HackHouston {
             array[i] = ran.nextInt();
         }
         for(int i=0 ;i<array.length;i++){
-            System.out.print(array[i]+" ");
+            System.out.print(array[i]+", ");
         }
         
         
