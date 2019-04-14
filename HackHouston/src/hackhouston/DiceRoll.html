@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- This is a comment -->>
+<h1 style="background-color:DodgerBlue;">Dice Roller</h1>
+<p>Please select the type of dice you would like to roll.</p>
+<form action="/action_page.php">
+  <select name="Dice Type" id="tp">
+    <option value="4">D4</option>
+    <option value="6">D6</option>
+	<option value="8">D8</option>
+    <option value="10">D10</option>
+    <option value="12">D12</option>
+	<option value="20">D20</option>
+	<option value="100">D100</option>
+  </select>
+  <br><br>
+</form>
+<form action="/action_page.php">
+	Please enter how many dice you would like to roll (minimum 1).
+	<input type="number" name="dice" min="1" id="num" >
+</form>
+<br>
+<button onclick="roll()">Roll</button>
+
+<script>
+function roll()
+{
+	var num=document.getElementById("num").value;
+	var type=document.getElementById("tp").value;
+	var i;
+	var fin = "";
+	for (i=0;i<num;i++){
+		fin += (Math.floor(Math.random()*type)+1)+" ";
+
+	}
+	document.getElementById("demo").innerHTML = fin;
+}
+</script>
+<p id="demo"></p>
+</body>
+</html>
