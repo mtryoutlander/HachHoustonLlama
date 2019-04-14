@@ -48,6 +48,12 @@
 		#stealth{width: 3em;}
 		#survival{width: 3em;}
 		#passiveWisdom{width: 3em;}
+		#strengtht{width: 3em;}
+		#dexterityt{width: 3em;}
+		#constitutiont{width: 3em;}
+		#intelligencet{width: 3em;}
+		#wisdomt{width: 3em;}
+		#charismat{width: 3em;}
 		
 		.sidenav {
   width: 130px;
@@ -232,23 +238,24 @@ text-align:center;
 <fieldset>
 	<legend> Saving Throws </legend>
 	Strength: 	<input type="checkbox" name="throw" value="strength">
-				<input type="number" name="strength" id="numbers">
+				<input type="number" name="strength" id="strengtht">
 	<br>
 	Dexterity: 	<input type="checkbox" name="throw" value="dexterity">
-				<input type="number" name="dexterity" id="numbers">
+				<input type="number" name="dexterity" id="dexterityt">
 	<br>
 	Constitution: 	<input type="checkbox" name="throw" value="constitution">
-					<input type="number" name="constitution" id="numbers">
+					<input type="number" name="constitution" id="constitutiont">
 	<br>
 	Intelligence: 	<input type="checkbox" name="throw" value="intelligence">
-					<input type="number" name="intelligence" id="numbers">
+					<input type="number" name="intelligence" id="intelligencet">
 	<br>
 	Wisdom: <input type="checkbox" name="throw" value="wisdom">
-			<input type="number" name="wisdom" id="numbers">
+			<input type="number" name="wisdom" id="wisdomt">
 	<br>
 	Charisma: 	<input type="checkbox" name="throw" value="charisma">
-				<input type="number" name="charisma" id="numbers">
+				<input type="number" name="charisma" id="charismat">
 	<br>
+	<button type="button" onclick="updateSavingThrows()">Update Modifiers</button>
 </fieldset>
 
 <fieldset>
@@ -300,7 +307,7 @@ function updateStatModifiers(){
 	document.getElementById('chmodifier').value = Math.floor((document.getElementById('charisma').value - 10) / 2);
 }
 
-var acrobaticsCheck = document.getElementById('acrobaticscb').isChecked;
+var acrobaticsCheck = document.getElementById('acrobaticscb').checked;
 var animalHandlingCheck = document.getElementById('animalHandlingcb').isChecked;
 var arcanaCheck = document.getElementById('arcanacb').isChecked;
 var athleticsCheck = document.getElementById('athleticscb').isChecked;
@@ -321,7 +328,32 @@ var survivalCheck = document.getElementById('survivalcb').isChecked;
 
 function updateSkillModifiers(){
 	document.getElementById('acrobatics').value = document.getElementById('dmodifier').value;
-	
+	document.getElementById('animalHandling').value = document.getElementById('wmodifier').value;
+	document.getElementById('arcana').value = document.getElementById('imodifier').value;
+	document.getElementById('athletics').value = document.getElementById('smodifier').value;
+	document.getElementById('deception').value = document.getElementById('chmodifier').value;
+	document.getElementById('history').value = document.getElementById('imodifier').value;
+	document.getElementById('insight').value = document.getElementById('wmodifier').value;
+	document.getElementById('intimidation').value = document.getElementById('chmodifier').value;
+	document.getElementById('investigation').value = document.getElementById('imodifier').value;
+	document.getElementById('medicine').value = document.getElementById('wmodifier').value;
+	document.getElementById('nature').value = document.getElementById('imodifier').value;
+	document.getElementById('perception').value = document.getElementById('wmodifier').value;
+	document.getElementById('performance').value = document.getElementById('wmodifier').value;
+	document.getElementById('persuasion').value = document.getElementById('chmodifier').value;
+	document.getElementById('religion').value = document.getElementById('imodifier').value;
+	document.getElementById('sleightOfHand').value = document.getElementById('dmodifier').value;
+	document.getElementById('stealth').value = document.getElementById('dmodifier').value;
+	document.getElementById('survival').value = document.getElementById('wmodifier').value;
+}
+
+function updateSavingThrows(){
+	document.getElementById('strengtht').value = document.getElementById('smodifier').value;
+	document.getElementById('dexterityt').value = document.getElementById('dmodifier').value;
+	document.getElementById('constitutiont').value = document.getElementById('comodifier').value;
+	document.getElementById('intelligencet').value = document.getElementById('imodifier').value;
+	document.getElementById('wisdomt').value = document.getElementById('wmodifier').value;
+	document.getElementById('charismat').value = document.getElementById('chmodifier').value;
 }
 </script>
 	
