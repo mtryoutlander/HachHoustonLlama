@@ -59,15 +59,18 @@
 </button>
 <div class="pargrh" >
 
-  <p id="demo">NPC</p>
-  </div>
+  <p id="race">NPC</p>
+  <p id="sex"></p>
+  <p id="background"></p>
+  <p id="Alignment"></p>
+</div>
 
 </section>
 
 
 <script>
 function myFunction(){
-  var npc ="";
+  var npc ="Race: ";
   switch(Math.floor(Math.random()*10)+1){
     case 1:
       npc+="Dwarf";
@@ -100,8 +103,93 @@ function myFunction(){
       npc+="Teifling";
       break;
   }
-  document.getElementById("demo").innerHTML =npc;
+  document.getElementById("race").innerHTML =npc;
   
+  npc="sex: "
+  switch(Math.floor(Math.random()*2)+1){
+    case 1:
+      npc+="male";
+      break;
+    case 2:
+      npc+="female";
+      break;
+  }
+    document.getElementById("sex").innerHTML =npc;
+  npc="Background: "
+  switch(Math.floor(Math.random()*13)+1){
+    case 1:
+      npc+="Acolyte";
+      break;
+    case 2:
+      npc+="Charlatan";
+      break;
+    case 3:
+      npc+="Criminal";
+      break;
+    case 4:
+      npc+="Entertainer";
+      break;
+    case 5:
+      npc+="Folkhero";
+      break;
+    case 6:
+      npc+="GuildArtisan";
+      break;
+    case 7:
+      npc+="Hermit";
+      break;
+    case 8:
+      npc+="Noble";
+      break;
+    case 9:
+      npc+="Outlander";
+      break;
+    case 10:
+      npc+="Sage";
+      break;
+    case 11:
+      npc+="Sailor";
+      break;
+    case 12:
+      npc+="Soldier";
+      break;
+    case 13:
+      npc+="Urchin";
+      break;
+  }
+  
+  document.getElementById("background").innerHTML =npc;
+  npc="Alliment: "
+  switch(Math.floor(Math.random()*9)+1){
+    case 1:
+      npc+="Choatic Evil";
+      break;
+    case 2:
+      npc+="Evil";
+      break;
+    case 3:
+      npc+="Lawful Evil";
+      break;
+    case 4:
+      npc+="Choatic Neutral";
+      break;
+    case 5:
+      npc+="Neutral";
+      break;
+    case 6:
+      npc+="Lawful Neutral";
+      break;
+    case 7:
+      npc+="Chaoatic Good";
+      break;
+    case 8:
+      npc+="Good";
+      break;
+    case 9:
+      npc+="Lawful Good";
+      break;
+  }
+    document.getElementById("Alignment").innerHTML =npc;
 }
 </script>
 
