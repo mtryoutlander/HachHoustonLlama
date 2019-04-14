@@ -1,0 +1,111 @@
+<html>
+<head>
+<title> main</title>
+
+<style>
+
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 25px;
+  top: 30%;
+  left: 10px;
+  background: #000000;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+}
+
+.sidenav a:hover{
+  color:#ff0000;
+}
+.pargrh{
+  background: #A0A0A0;
+  font-size: 50px;
+  color:#ffffff ;
+  display: block;
+  width: 50%;
+  margin: 10%;
+  border: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<img src="logo.png"  width ="1000" height="250" alt="logo" usemap="#logo">
+
+<map name="logo">
+  <area shape="rect" coords="0,0,1000,250" alt "logo" href="MainPg.html">
+</map>
+   
+   <button onclick="myFunction()">Make NPC</button>
+
+<section>
+<div class="sidenav">
+  <a href="test.html">Toon Maker</a>
+  <a href="#">Dice Roller</a>
+  <a href="#">NPC Genertator</a>
+  <a href="#">Enchounter</a>
+  <a href="#">Loot Genertator</a>
+</div>
+<button type="button" onclick="myFunction()">
+</button>
+<div class="pargrh" >
+
+  <p id="demo">NPC</p>
+  </div>
+
+</section>
+
+
+<script>
+function myFunction(){
+  var npc ="";
+  switch(Math.floor(Math.random()*10)+1){
+    case 1:
+      npc+="Dwarf";
+      break;
+    case 2:
+      npc+="Elf";
+      break;
+    case 3:
+      npc+="Human";
+      break;
+    case 4:
+      npc+="Halfling";
+      break;
+    case 5:
+      npc+="Half-Elf";
+      break;
+    case 6:
+      npc+="Gnome";
+      break;
+    case 7:
+      npc+="Bug Bear";
+      break;
+    case 8:
+      npc+="Dragon Born";
+      break;
+    case 9:
+      npc+="Drow";
+      break;
+    case 10:
+      npc+="Teifling";
+      break;
+  }
+  document.getElementById("demo").innerHTML =npc;
+  
+}
+</script>
+
+
+</body>
+
+</html>

@@ -1,8 +1,57 @@
 <!DOCTYPE html>
 <html>
+  <style>
+  .sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 25px;
+  top: 30%;
+  left: 10px;
+  background: #000000;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+}
+
+.sidenav a:hover{
+  color:#ff0000;
+}
+
+.pargrh{
+  font-size: 25px;
+  color:#000000s ;
+  display: block;
+  margin: 10%;
+  border: 10px;
+}
+</style>
 <body>
+  
+<img src="logo.png"  width ="1000" height="250" alt="logo" usemap="#logo">
+<map name="logo">
+  <area shape="rect" coords="0,0,1000,250" alt "logo" href="MainPg.html">
+</map>
+<section>
+<div class="sidenav">
+  <a href="test.html">Toon Maker</a>
+  <a href="DiceRoll.html">Dice Roller</a>
+  <a href="NPC.html">NPC Genertator</a>
+  <a href="#">Enchounter</a>
+  <a href="#">Loot Genertator</a>
+</div>
+
+
 <!-- This is a comment -->>
-<h1 style="background-color:DodgerBlue;">Dice Roller</h1>
+
+
+<div class="pargrh">
+  <h1 style="background-color:DodgerBlue;">Dice Roller</h1>
 <p>Please select the type of dice you would like to roll.</p>
 <form >
   <select name="Dice Type" id="tp">
@@ -22,6 +71,8 @@
 </form>
 <br>
 <button onclick="roll()">Roll</button>
+<p id="demo"></p>
+</div>
 
 <script>
 function roll()
@@ -32,11 +83,10 @@ function roll()
 	var fin = "";
 	for (i=0;i<num;i++){
 		fin += (Math.floor(Math.random()*type)+1)+" ";
-
 	}
 	document.getElementById("demo").innerHTML = fin;
 }
 </script>
-<p id="demo"></p>
+
 </body>
 </html>
