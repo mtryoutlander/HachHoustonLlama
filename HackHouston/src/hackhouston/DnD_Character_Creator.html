@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<img src="logo.jpg"  width ="1000" height="250" alt="logo" usemap="#logo">
+
+<map name="logo">
+  <area shape="rect" coords="0,0,1000,250" alt "logo" href="Home.html">
+   </map>
+
+<div class="sidenav">
+  <a href="Dnd_Character_Creator.html">Toon Maker</a>
+  <a href="DiceRoll.html">Dice Roller</a>
+  <a href="NPC.html">NPC Genertator</a>
+  <a href="LootGen.html">Loot Genertator</a>
+</div>
+<div class="pargrh">
+<title>DnD Character Creator</title>
+<style>	#strength{width: 3em;}
+		#smodifier{width: 3em;}
+		#dexterity{width: 3em;}
+		#dmodifier{width: 3em;}
+		#constitution{width: 3em;}
+		#comodifier{width: 3em;}
+		#intelligence{width: 3em;}
+		#imodifier{width: 3em;}
+		#wisdom{width: 3em;}
+		#wmodifier{width: 3em;}
+		#charisma{width: 3em;}
+		#chmodifier{width: 3em;}
+		
+		#proficiencyBonus{width: 3em;}
+		#acrobatics{width: 3em;}
+		#animalHandling{width: 3em;}
+		#arcana{width: 3em;}
+		#athletics{width: 3em;}
+		#deception{width: 3em;}
+		#history{width: 3em;}
+		#insight{width: 3em;}
+		#intimidation{width: 3em;}
+		#investigation{width: 3em;}
+		#medicine{width: 3em;}
+		#nature{width: 3em;}
+		#perception{width: 3em;}
+		#performance{width: 3em;}
+		#persuasion{width: 3em;}
+		#religion{width: 3em;}
+		#sleightOfHand{width: 3em;}
+		#stealth{width: 3em;}
+		#survival{width: 3em;}
+		#passiveWisdom{width: 3em;}
+		
+		.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 25px;
+  top: 30%;
+  left: 10px;
+  background: #000000;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+}
+.sidenav a:hover{
+  color:#ff0000;
+}
+body{
+text-align:center;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<h1>Dungeons and Dragons Character Creator</h1>
+
+<fieldset>
+	<legend> General Character Information </legend>
+	Name:	<input type="text" name="name">
+	<br>
+	Class:	<input list="classes" name="classes">
+			<datalist id="classes">
+				<option value="Barbarian">
+				<option value="Bard">
+				<option value="Cleric">
+				<option value="Druid">
+				<option value="Fighter">
+				<option value="Monk">
+				<option value="Paladin">
+				<option value="Ranger">
+				<option value="Rogue">
+				<option value="Sorcerer">
+				<option value="Warlock">
+				<option value="Wizard">
+			</datalist>
+	<br>
+	Background:	<input list="backgrounds" name="backgrounds">
+				<datalist id="backgrounds">
+					<option value="Acolyte">
+					<option value="Charlatan">
+					<option value="Criminal">
+					<option value="Entertainer">
+					<option value="Folk Hero">
+					<option value="Guild Artisan">
+					<option value="Hermit">
+					<option value="Noble">
+					<option value="Outlander">
+					<option value="Sage">
+					<option value="Sailor">
+					<option value="Soldier">
+					<option value="Urchin">
+				</datalist>
+	<br>
+	Race:	<input list="races" name="races">
+			<datalist id="races">
+				<option value="Dwarf">
+				<option value="Elf">
+				<option value="Halfling">
+				<option value="Human">
+				<option value="Dragonborn">
+				<option value="Gnome">
+				<option value="Half-Elf">
+				<option value="Half-Orc">
+				<option value="Tiefling">
+			</datalist>
+	<br>
+	Alignment:	<select name="alignments">
+					<option value="lg">Lawful Good</option>
+					<option value="ln">Lawful Neutral</option>
+					<option value="le">Lawful Evil</option>
+					<option value="ng">Neutral Good</option>
+					<option value="tn">True Neutral</option>
+					<option value="ne">Neutral Evil</option>
+					<option value="cg">Chaotic Good</option>
+					<option value="cn">Chaotic Neutral</option>
+					<option value="ce">Chaotic Evil</option>
+				</select>
+</fieldset>
+
+<fieldset>
+	<legend> Stats </legend>
+	Strength: <input type="number" name="strength" id="strength">
+	Modifier: <input type="number" name="smodifier" id="smodifier">
+	<br>
+	Dexterity: <input type="number" name="dexterity" id="dexterity">
+	Modifier: <input type="number" name="dmodifier" id="dmodifier">
+	<br>
+	Constitution: <input type="number" name="constitution" id="constitution">
+	Modifier: <input type="number" name="comodifier" id="comodifier" >
+	<br>
+	Intelligence: <input type="number" name="intelligence" id="intelligence">
+	Modifier: <input type="number" name="imodifier" id="imodifier">
+	<br>
+	Wisdom: <input type="number" name="wisdom" id="wisdom">
+	Modifier: <input type="number" name="wmodifier" id="wmodifier">
+	<br>
+	Charisma: <input type="number" name="charisma" id="charisma">
+	Modifier: <input type="number" name="chmodifier" id="chmodifier">
+	<br>
+	<button type="button" onclick="updateStatModifiers()">Update Modifiers</button>
+</fieldset>
+
+<fieldset>
+	<legend> Skills </legend>
+	Proficiency Bonus: <input type="number" name="proficiencyBonus" id="proficiencyBonus">
+	<br>
+	Acrobatics: <input type="checkbox" name="skill" value="acrobatics" id="acrobaticscb">
+				<input type="number" name="acrobatics" id="acrobatics">
+	<br>
+	Animal Handling: <input type="checkbox" name="skill" value="animalHandling" id="animalHandlingcb">
+					 <input type="number" name="animalHandling" id="animalHandling">
+	<br>
+	Arcana: <input type="checkbox" name="skill" value="arcana" id="arcanacb">
+			<input type="number" name="arcana" id="arcana">
+	<br>
+	Athletics: <input type="checkbox" name="skill" value="athletics" id="athleticscb">
+			   <input type="number" name="athletics" id="athletics">
+	<br>
+	Deception: <input type="checkbox" name="skill" value="deception" id="deceptioncb">
+			   <input type="number" name="deception" id="deception">
+	<br>
+	History: <input type="checkbox" name="skill" value="history" id="historycb">
+			 <input type="number" name="history" id="history">
+	<br>
+	Insight: <input type="checkbox" name="skill" value="insight" id="insightcb">
+			 <input type="number" name="insight" id="insight">
+	<br>
+	Intimidation: <input type="checkbox" name="skill" value="intimidation" id="intimidationcb">
+				  <input type="number" name="intimidation" id="intimidation">
+	<br>
+	Investigation: <input type="checkbox" name="skill" value="investigation" id="investigationcb">
+				   <input type="number" name="investigation" id="investigation">
+	<br>
+	Medicine: <input type="checkbox" name="skill" value="medicine" id="medicinecb">
+			  <input type="number" name="medicine" id="medicine">
+	<br>
+	Nature: <input type="checkbox" name="skill" value="nature" id="naturecb">
+			<input type="number" name="nature" id="nature">
+	<br>
+	Perception: <input type="checkbox" name="skill" value="perception" id="perceptioncb">
+				<input type="number" name="perception" id="perception">
+	<br>
+	Performance: <input type="checkbox" name="skill" value="performance" id="performancecb">
+				 <input type="number" name="performance" id="performance">
+	<br>
+	Persuasion: <input type="checkbox" name="skill" value="persuasion" id="persuasioncb">
+				<input type="number" name="persuasion" id="persuasion">
+	<br>
+	Religion: <input type="checkbox" name="skill" value="religion" id="religioncb">
+			  <input type="number" name="religion" id="religion">
+	<br>
+	Sleight of Hand: <input type="checkbox" name="skill" value="slieghtOfHand" id="sleightcb">
+					 <input type="number" name="sleightOfHand" id="sleightOfHand">
+	<br>
+	Stealth: <input type="checkbox" name="skill" value="stealth" id="stealthcb">
+			 <input type="number" name="stealth" id="stealth">
+	<br>
+	Survival: <input type="checkbox" name="skill" value="survival" id="survivalcb">
+			  <input type="number" name="survival" id="survival">
+	<br>
+	<button type="button" onclick="updateSkillModifiers()">Update Modifiers</button>
+
+</fieldset>
+
+<fieldset>
+	<legend> Saving Throws </legend>
+	Strength: 	<input type="checkbox" name="throw" value="strength">
+				<input type="number" name="strength" id="numbers">
+	<br>
+	Dexterity: 	<input type="checkbox" name="throw" value="dexterity">
+				<input type="number" name="dexterity" id="numbers">
+	<br>
+	Constitution: 	<input type="checkbox" name="throw" value="constitution">
+					<input type="number" name="constitution" id="numbers">
+	<br>
+	Intelligence: 	<input type="checkbox" name="throw" value="intelligence">
+					<input type="number" name="intelligence" id="numbers">
+	<br>
+	Wisdom: <input type="checkbox" name="throw" value="wisdom">
+			<input type="number" name="wisdom" id="numbers">
+	<br>
+	Charisma: 	<input type="checkbox" name="throw" value="charisma">
+				<input type="number" name="charisma" id="numbers">
+	<br>
+</fieldset>
+
+<fieldset>
+	<legend> Battle </legend>
+	Armor Class: <input type="number" name="armorClass" id="numbers">
+	<br>
+	Initiative: <input type="number" name="initiative" id="numbers">
+	<br>
+	Speed: <input type="number" name="speed" id="numbers">
+	<br>
+</fieldset>
+
+<fieldset>
+	<legend> Equipment </legend>
+	<textarea name="equipment" rows="10" cols="30"></textarea>
+</fieldset>
+
+<fieldset>
+	<legend> Features and Traits </legend>
+	<textarea name="featuresAndTraits" rows="40" cols="30"></textarea>
+</fieldset>
+
+<fieldset>
+	<legend> Personality </legend>
+	--Personality Traits--
+	<br>
+	<textarea name="personalityTraits" rows="5" cols="30"></textarea>
+	<br>
+	--Ideals--
+	<br>
+	<textarea name="ideals" rows="5" cols="30"></textarea>
+	<br>
+	--Bonds--
+	<br>
+	<textarea name="bonds" rows="5" cols="30"></textarea>
+	<br>
+	--Flaws--
+	<br>
+	<textarea name="flaws" rows="5" cols="30"></textarea>
+</fieldset>
+
+<script>
+function updateStatModifiers(){
+	document.getElementById('smodifier').value = Math.floor((document.getElementById('strength').value - 10) / 2);
+	document.getElementById('dmodifier').value = Math.floor((document.getElementById('dexterity').value - 10) / 2);
+	document.getElementById('comodifier').value = Math.floor((document.getElementById('constitution').value - 10) / 2);
+	document.getElementById('imodifier').value = Math.floor((document.getElementById('intelligence').value - 10) / 2);
+	document.getElementById('wmodifier').value = Math.floor((document.getElementById('wisdom').value - 10) / 2);
+	document.getElementById('chmodifier').value = Math.floor((document.getElementById('charisma').value - 10) / 2);
+}
+
+var acrobaticsCheck = document.getElementById('acrobaticscb').isChecked;
+var animalHandlingCheck = document.getElementById('animalHandlingcb').isChecked;
+var arcanaCheck = document.getElementById('arcanacb').isChecked;
+var athleticsCheck = document.getElementById('athleticscb').isChecked;
+var deceptionCheck = document.getElementById('deceptioncb').isChecked;
+var historyCheck = document.getElementById('historycb').isChecked;
+var insightCheck = document.getElementById('insightcb').isChecked;
+var intimidationCheck = document.getElementById('intimidationcb').isChecked;
+var investigationCheck = document.getElementById('investigationcb').isChecked;
+var medicineCheck = document.getElementById('medicinecb').isChecked;
+var natureCheck = document.getElementById('naturecb').isChecked;
+var perceptionCheck = document.getElementById('perceptioncb').isChecked;
+var performanceCheck = document.getElementById('performancecb').isChecked;
+var persuasionCheck = document.getElementById('persuasioncb').isChecked;
+var religionCheck = document.getElementById('religioncb').isChecked;
+var sleightCheck = document.getElementById('sleightcb').isChecked;
+var stealthCheck = document.getElementById('stealthcb').isChecked;
+var survivalCheck = document.getElementById('survivalcb').isChecked;
+
+function updateSkillModifiers(){
+	document.getElementById('acrobatics').value = document.getElementById('dmodifier').value;
+	
+}
+</script>
+	
+</body>
+</html>
