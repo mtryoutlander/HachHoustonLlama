@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>main </title>
+    	<style>
+        body{
+text-align:center;
+background-color: #993300;
+}
+</style>
+</head>
+<body>
+<h1>Loot Generator</h1>
+<p> Select loot type(s)</p>
+<!--checkboxes to choose what arrays to pull from-->
+  <form>
+   
+    <input type="checkbox" id="consumable"> Consumables
+    <input type="checkbox" id="lightArmor"> Light Armor
+    <input type="checkbox" id="heavyArmor"> Heavy Armor<br>
+    <input type="checkbox" id="rangedWeapon"> Ranged Weapons
+    <input type="checkbox" id="meleeWeapon"> Melee Weapons<br>
+   
+</form>
+<button onclick="test()">Click</button><br>
+ Name <p id="slot">test</p>
+  <!--function that will check if random is selected first, if not will check what boxes are selected and use random num to choose type and another randum num to choose one of 4 in the array of that type then return it.-->
+<script>
+function test(){
+var succes, fin, temp1, value, x, selected, result;
+var consumableCheck, lightArmorCheck, heavyArmorCheck, rangedWeaponsCheck, meleeWeaponsCheck;
+<!--document.getElementById("slot").innerHTML = random;-->
+	var consumableArray = ["Bread","Health potion","Stamina porion","Smoke bomb","Salt"];
+	var lightArmorArray = ["Leather Armor","Hunters Armor","Wood plate armor","Dragon Scale Armor","Hides Armor"];
+	var heavyArmorArray = ["Iron Platemail","Banded Iron Armor","legendary Potato Armor","Steel Plate Armor ","Dragon Bone Armor"];
+	var rangedArray = ["Short Bow","5 Steel Bolts","Crossbow","Long Bow","15 Iron Arrows"];
+	var meleeArray = ["Iron Dagger","Iron Schmitar","Battle Pan","Dwarven Greatsword","Iron Mace"];
+	
+	var x= generate();
+	
+	var lightArmor = document.getElementById("lightArmor").checked;
+	
+		if (x == 0 && lightArmor == 1){
+		document.getElementById("slot").innerHTML = lightArmorArray[generate()];}
+	
+	var consumable = document.getElementById("consumable").checked;
+		if (x == 1 && consumable == 1){
+		document.getElementById("slot").innerHTML = consumableArray[generate()];}
+	
+	var heavyArmor = document.getElementById("heavyArmor").checked;
+		if (x== 2 && heavyArmor ==1) {
+		document.getElementById("slot").innerHTML = heavyArmorArray[generate()];}
+	
+	var rangeWeapon = document.getElementById("rangedWeapon").checked;
+		if (x == 3 && rangeWeapon == 1){
+		document.getElementById("slot").innerHTML = rangedWeaponArray[generate()];}
+	
+	var meleeWeapon = document.getElementById("meleeWeapon").checked;
+		if (x == 4 && meleeWeapon == 1){
+		document.getElementById("slot").innerHTML = meleeArray[generate()];}
+}
+
+function generate() {return Math.floor(Math.random() * 5);
+}
+</script>
+</body>
+</html>
